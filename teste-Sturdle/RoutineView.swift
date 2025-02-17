@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct RoutineView: View {
+    
+    let routine: Routine
+    init(routine: Routine) {
+        self.routine = routine
+    }
         
     var body: some View {
         ZStack{
@@ -22,7 +27,7 @@ struct RoutineView: View {
             
             VStack{
                 HStack{
-                    Text("nomedaRotina")
+                    Text(routine.name)
                         .font(.system(size: 25, weight: .bold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
@@ -37,7 +42,7 @@ struct RoutineView: View {
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .foregroundStyle(.white)
-                        .frame(width: 40, height: 40)
+                        .frame(width: 30, height: 30)
                     
                 }
                 
@@ -51,19 +56,6 @@ struct RoutineView: View {
                         .foregroundColor(.white)
                         .frame(width: 113, height: 28)
                     
-                    Spacer()
-                        .frame(width: 130, height: 12)
-                    
-                    Image(systemName: "stopwatch.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .foregroundStyle(.white)
-                        .frame(width: 20, height: 20)
-                    Text("09/99/9999")
-                        .font(.system(size: 21, weight: .bold))
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.white)
-                        .frame(width: 123, height: 28)
                     
                     Spacer()
                 }
@@ -93,5 +85,5 @@ struct RoutineView: View {
 
 #Preview {
     
-    RoutineView()
+    RoutineView(routine: .init(name: "nomeDaRoutina"))
 }

@@ -8,6 +8,14 @@
 import SwiftUI
 
 struct TaskView: View {
+    
+    let task: Task
+    
+    init(task: Task) {
+        self.task = task
+    }
+    
+    
     var body: some View {
         ZStack{
             Rectangle()
@@ -21,22 +29,27 @@ struct TaskView: View {
             
             HStack{
                 VStack{
-                    Text("atividade")
+                    Text(task.name)
                         .font(.system(size: 20, weight: .bold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
                         .frame(width: 113, height: 28)
                     Spacer()
                     
-                    
+                    Text(task.deadline)
+                        .font(.system(size: 18, weight: .bold))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .frame(width: 123, height: 28)
                 }
+                
                 Spacer()
                     .frame(width: 30)
                 
                 VStack{
                     Spacer()
                     
-                    Image(systemName: "checkmark.square")
+                    Image(systemName: task.isDone ? "checkmark.square": "square")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .foregroundStyle(.white)
@@ -54,5 +67,5 @@ struct TaskView: View {
 }
 
 #Preview {
-    TaskView()
+    TaskView(task: .init(name: "macosmio", deadline: "66/66/6666", isDone: true, routine: .init(name: "Rotina")))
 }

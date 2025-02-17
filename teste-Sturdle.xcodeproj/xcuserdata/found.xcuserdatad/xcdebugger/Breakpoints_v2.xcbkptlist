@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "76F32E61-8D1F-4511-9290-A3DA7BACF766"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C5CCCF3C-AAE5-47D0-8701-E054639AC2C3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/xk/qttw_8r11213_h616x3d3ljw0000gp/T/swift-generated-sources/@__swiftmacro_13teste_Sturdle0022RoutineViewswift_tiAIefMX98_0_33_8BB89BA749FD75C01E4D8716368A1E41Ll7PreviewfMf_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "$s13teste_Sturdle0022RoutineViewswift_tiAIefMX98_0_33_8BB89BA749FD75C01E4D8716368A1E41Ll7PreviewfMf_15PreviewRegistryfMu_"
+            landmarkType = "37">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

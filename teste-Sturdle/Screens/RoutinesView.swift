@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RoutinesView: View {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var modelContext
+    
+    
     var body: some View {
         Rectangle()
           .foregroundColor(.clear)

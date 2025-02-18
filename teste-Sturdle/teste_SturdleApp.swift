@@ -11,8 +11,8 @@ import SwiftData
 @main
 struct teste_SturdleApp: App {
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+            WindowGroup {
+                ContentView()
+            }
         }
-    }
 }

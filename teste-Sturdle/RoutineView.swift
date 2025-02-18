@@ -9,7 +9,8 @@ import SwiftUI
 
 struct RoutineView: View {
     
-    let routine: Routine
+    @State var routine: Routine
+    
     init(routine: Routine) {
         self.routine = routine
     }

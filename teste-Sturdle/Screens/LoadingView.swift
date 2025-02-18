@@ -14,7 +14,7 @@ struct LoadingView: View {
     var body: some View {
         ZStack {
             if self.isActive{
-                WelcomeView()
+                RoutinesView()
             } else{
                 VStack {
                     Spacer()

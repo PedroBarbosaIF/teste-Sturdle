@@ -22,6 +22,6 @@ struct ActivityIndicator: UIViewRepresentable {
 }
 
 #Preview {
-    ActivityIndicator(isAnimating: .constant(true), style: UIActivityIndicatorView.Style.gray)
+    ActivityIndicator(isAnimating: .constant(true), style: UIActivityIndicatorView.Style.medium)
 }
     

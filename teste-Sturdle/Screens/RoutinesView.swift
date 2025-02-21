@@ -16,7 +16,7 @@ struct RoutinesView: View {
     @State var doesHaveRoutine = false
     
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 Rectangle()
                     .foregroundColor(.clear)

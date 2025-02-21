@@ -19,9 +19,10 @@ struct TaskView: View {
     var body: some View {
         ZStack{
             Rectangle()
+//                .fill(.shadow(.inner(radius: 10, y: 10)))
                 .foregroundColor(.clear)
                 .frame(width: 190, height: 162)
-                .background(LinearGradient(colors: [.greenSturdle,.greenSturdle,.blueSturdle],
+                .background(LinearGradient(colors: [.greenSturdle],
                                            startPoint: .top,
                                            endPoint: .bottom))
                 .cornerRadius(24)

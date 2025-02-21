@@ -6,14 +6,18 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct RoutineView: View {
     
     @State var routine: Routine
+    @Query var tasks: [Task]
+    @State var tasksFromRoutine: [Task] = []
+    @Environment(\.modelContext) var modelContext
     
-    init(routine: Routine) {
-        self.routine = routine
-    }
+//    init(routine: Routine) {
+//        self.routine = routine
+//    }
         
     var body: some View {
         ZStack{
@@ -38,13 +42,15 @@ struct RoutineView: View {
                         .frame(width: 140, height: 10)
                     
                     
-                    
-                    Image(systemName: "trash")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .foregroundStyle(.white)
-                        .frame(width: 30, height: 30)
-                    
+                    Button{
+                        modelContext.delete(routine)
+                    }label: {
+                        Image(systemName: "trash")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .foregroundStyle(.white)
+                            .frame(width: 30, height: 30)
+                    }
                 }
                 
                 Spacer()

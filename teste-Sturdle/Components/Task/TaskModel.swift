@@ -5,7 +5,7 @@ import SwiftData
 class Task{
     var name: String
     var deadline: String
-    var isDone: Bool
+    var isDone: Bool = false
     var routine: Routine
     
     

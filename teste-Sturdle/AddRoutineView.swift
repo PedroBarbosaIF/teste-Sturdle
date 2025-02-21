@@ -13,6 +13,7 @@ struct AddRoutineView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var isShowingSheet: Bool
     @State var title = ""
+    @Binding var doesHaveRoutine: Bool
     
     var body: some View {
         List {
@@ -23,6 +24,7 @@ struct AddRoutineView: View {
                         let routine = Routine(name: title)
                         modelContext.insert(routine)
                         title = ""
+                        doesHaveRoutine = true
                         dismiss()
                     } label: {
                         Text("SAVE")
@@ -38,5 +40,5 @@ struct AddRoutineView: View {
 #Preview {
     @Previewable @State var isShowingSheet:Bool = false
     
-    AddRoutineView(isShowingSheet: $isShowingSheet)
+    AddRoutineView(isShowingSheet: $isShowingSheet, doesHaveRoutine: .constant(false))
 }

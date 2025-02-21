@@ -45,9 +45,6 @@ struct RoutinesView: View {
                     .cornerRadius(50)
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 }
-                else{
-                    
-                }
                 
                 ForEach(routines){ routine in
                     RoutineView(routine: routine)
@@ -68,7 +65,7 @@ struct RoutinesView: View {
                 
             }
             .sheet(isPresented: $isShowingSheet){
-                AddRoutineView(isShowingSheet: $isShowingSheet)
+                AddRoutineView(isShowingSheet: $isShowingSheet, doesHaveRoutine: $doesHaveRoutine)
             }
         }
     }

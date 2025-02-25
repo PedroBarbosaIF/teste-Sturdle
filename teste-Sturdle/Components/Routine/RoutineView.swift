@@ -12,7 +12,7 @@ struct RoutineView: View {
     
     @State var routine: Routine
     @Query var tasks: [Task]
-    @State var tasksFromRoutine: [Task] = []
+    
     @Environment(\.modelContext) var modelContext
     
 //    init(routine: Routine) {
@@ -57,7 +57,7 @@ struct RoutineView: View {
                     .frame(width: 10, height: 60)
                 
                 HStack{
-                    Text("0/8")
+                    Text("\(tasks.filter { $0.routine.id == routine.id }.filter { $0.isDone }.count)/\(tasks.filter { $0.routine.id == routine.id }.count)")
                         .font(.system(size: 25, weight: .bold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)

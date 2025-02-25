@@ -40,5 +40,6 @@ struct AddRoutineView: View {
 #Preview {
     @Previewable @State var isShowingSheet:Bool = false
     
-    AddRoutineView(isShowingSheet: $isShowingSheet, doesHaveRoutine: .constant(false))
+    AddRoutineView(isShowingSheet: $isShowingSheet,
+                   doesHaveRoutine: .constant(false))
 }

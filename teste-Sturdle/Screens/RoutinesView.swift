@@ -47,7 +47,9 @@ struct RoutinesView: View {
                 }
                 
                 ForEach(routines){ routine in
-                    RoutineView(routine: routine)
+                    NavigationLink(destination: TasksView(routine: routine)){
+                        RoutineView(routine: routine)
+                    }
                 }
                 
                 

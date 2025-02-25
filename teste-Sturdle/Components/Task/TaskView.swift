@@ -32,20 +32,21 @@ struct TaskView: View {
                 .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
             
             HStack{
-                VStack{
+                VStack(alignment: .leading){
                     Text(task.name)
                         .font(.system(size: 20, weight: .bold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
-                        .frame(width: 113, height: 28)
+                        //.frame(width: 113, height: 28)
                     Spacer()
-                    
-                    Text(task.deadline)
+                    Text(formattedDate(task.deadline))
                         .font(.system(size: 18, weight: .bold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
-                        .frame(width: 123, height: 28)
+                        //.frame(width: 123, height: 28)
                 }
+                .padding(.leading, 16)
+                
                 
                 Spacer()
                     .frame(width: 30)
@@ -85,5 +86,5 @@ struct TaskView: View {
 }
 
 #Preview {
-    TaskView(task: .init(name: "macosmi", deadline: "66/66/6666", isDone: true, routine: .init(name: "Rotina")))
+    TaskView(task: .init(name: "macosmi", deadline: .now, isDone: true, routine: .init(name: "Rotina")))
 }

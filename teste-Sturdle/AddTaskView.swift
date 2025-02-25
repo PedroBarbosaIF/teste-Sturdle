@@ -15,38 +15,58 @@ struct AddTaskView: View {
     
     @State var routine: Routine
     @State var name: String = ""
-    @State var deadline: String = ""
+    @State var deadline = Date()
+    
     var body: some View {
-        VStack{
-            HStack{
-                Spacer()
-                Text("Topic name: ")
-                TextField("write here", text: $name)
-            }
-            HStack(alignment: .center) {
+        VStack {
+            Text("Topic name: ")
+                .bold()
+                .font(.largeTitle)
+            TextField("Write here!", text: $name)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
+            VStack(alignment: .center) {
                 Spacer()
                 Text("Topic deadline: ")
-                TextField("XX/XX/XXXX", text: $deadline)
+                    .bold()
+                    .font(.largeTitle)
+                DatePicker(
+                    "Topic deadline:",
+                    selection: $deadline,
+                    displayedComponents: [.date]
+                )
+                .datePickerStyle(GraphicalDatePickerStyle())
+                .padding()
             }
             
-            Button{
+            Button {
                 let task = Task(name: name,
                                 deadline: deadline,
                                 isDone: false,
                                 routine: routine)
                 modelContext.insert(task)
                 name = ""
-                deadline = ""
+                deadline = Date()
                 dismiss()
-            }label: {
+            } label: {
                 Text("Create")
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(8)
             }
+            .padding()
         }
+        .padding()
     }
 }
 
-#Preview {
-    @Previewable @State var isShowingSheet:Bool = false
-
-    AddTaskView(isShowingSheet: $isShowingSheet, routine: .init(name: "routina massa"))
+struct AddTaskView_Previews: PreviewProvider {
+    @State static var isShowingSheet: Bool = false
+    
+    static var previews: some View {
+        AddTaskView(isShowingSheet: $isShowingSheet, routine: Routine(name: "routina massa"))
+            .previewLayout(.sizeThatFits)
+            .padding()
+    }
 }

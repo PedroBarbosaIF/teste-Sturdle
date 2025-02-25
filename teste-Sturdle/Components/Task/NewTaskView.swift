@@ -67,7 +67,7 @@ struct NewTaskView: View {
 
 func fakeTask() -> Task{
     return Task(name: "TESTE MUITO PICAaaaaaa",
-                deadline: "09/10/2000",
+                deadline: .now,
                 isDone: false,
                 routine: fakeRoutine())
 }

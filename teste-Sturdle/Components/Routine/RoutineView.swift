@@ -66,24 +66,22 @@ struct RoutineView: View {
                     
                     Spacer()
                 }
-                ZStack{
+                ZStack(alignment: .leading){
                     Rectangle()
                         .foregroundColor(.clear)
                         .frame(width: 353, height: 8)
                         .background(Color(red: 1, green: 1, blue: 1))
                         .cornerRadius(24)
                     
-                    HStack{
-                        //BARRA DE PROGRESSO
                         Rectangle()
                             .foregroundColor(.clear)
-                            .frame(width:200, height: 8)
+                            .frame(width: progressBarNumber(tasks: tasks, routine: routine), height: 8)
                             .background(Color(red: 0.01, green: 1, blue: 0.82))
                             .cornerRadius(24)
                         
 //                        Spacer()
 //                            .frame(width: 350, height: 1)
-                    }
+                    
                 }
             }
         }

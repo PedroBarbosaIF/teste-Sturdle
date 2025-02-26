@@ -28,7 +28,7 @@ struct RoutinesView: View {
                             .frame(width: 201, height: 75)
                             .clipped())
                 
-                if doesHaveRoutine == false{
+                if routines.count == 0{
                     HStack(alignment: .center, spacing: 10) {
                         Text("Ops, parece que você ainda não criou nenhuma rotina!")
                             .font(

@@ -38,7 +38,7 @@ struct TaskView: View {
                         .font(.system(size: 20, weight: .bold))
                         .multilineTextAlignment(.center)
                         .foregroundColor(.white)
-                        //.frame(width: 113, height: 28)
+                        .frame(width: 113, height: 28, alignment: .leading)
                     Spacer()
                     Text(formattedDate(task.deadline))
                         .font(.system(size: 18, weight: .bold))
